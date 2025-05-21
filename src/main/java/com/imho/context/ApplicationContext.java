@@ -12,6 +12,9 @@ import java.sql.SQLException;
 
 public class ApplicationContext {
     private static ApplicationContext instance;
+    private Connection connection;
+    private ValidatorFactory validatorFactory;
+    private Validator validator;
 
     private ApplicationContext() {
     }
@@ -22,8 +25,6 @@ public class ApplicationContext {
         }
         return instance;
     }
-
-    private Connection connection;
 
     public Connection getConnection() {
         if (connection == null) {
@@ -40,8 +41,6 @@ public class ApplicationContext {
         return connection;
     }
 
-    private ValidatorFactory validatorFactory;
-
     private ValidatorFactory getValidatorFactory() {
         if (validatorFactory == null) {
             validatorFactory = Validation.byDefaultProvider()
@@ -51,8 +50,6 @@ public class ApplicationContext {
         }
         return validatorFactory;
     }
-
-    private Validator validator;
 
     public Validator getValidator() {
         if (validator == null) {
