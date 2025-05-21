@@ -4,6 +4,14 @@
              xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_0.xsd"
              version="3.0">
     <persistence-unit name="persistence">
+
+        <class>com.imho.domain.entity.user.User</class>
+        <class>com.imho.domain.entity.user.Customer</class>
+        <class>com.imho.domain.entity.user.Manager</class>
+        <class>com.imho.domain.entity.Fruit</class>
+        <class>com.imho.domain.entity.Order</class>
+        <class>com.imho.domain.entity.OrderItem</class>
+
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/fruitshop"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
